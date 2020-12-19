@@ -7,13 +7,13 @@ const scraperObject = {
         // Wait for the required DOM to be rendered
         await page.waitForSelector('body');
         // Writing needed name of vacancies'
-        await page.$eval('#id_9ea1', el => el.value = 'design');
-        // Get the link to all the required books
-        let urls = await page.$$eval('section ol > li', links => {
-            // Make sure the book to be scraped is in stock
-            links = links.filter(link => link.querySelector('.instock.availability > i').textContent !== "In stock")
+        await page.waitForSelector('#id_9ea1');
+        await page.focus('#id_9ea1');
+        await page.type('#id_9ea1', 'design');
+        // Get the link to all the required vac-s'
+        let urls = await page.$$eval('a.with-icon.smaller.no-print-href', links => {
             // Extract the links from the data
-            links = links.map(el => el.querySelector('h3 > a').href)
+            links = links.map(el => el.querySelector('a.with-icon.smaller.no-print-href').href)
             return links;
         });
         console.log(urls);
