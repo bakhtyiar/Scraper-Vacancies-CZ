@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'http://books.toscrape.com',
+    url: 'https://www.uradprace.cz/web/en/vacancies-search-3',
     async scraper(browser){
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
