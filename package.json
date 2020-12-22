@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "exceljs": "^4.2.0",
+    "fs": "0.0.1-security",
     "puppeteer": "^5.5.0"
   },
   "devDependencies": {},
